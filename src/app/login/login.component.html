@@ -1,0 +1,23 @@
+<div id="form-wrapper">
+      <mat-card>
+
+          <mat-toolbar color="primary">Login</mat-toolbar>
+      <br/>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>User Name</mat-label>
+          <input matInput formControlName="userName">
+          <mat-icon  color="primary" matSuffix>perm_identity</mat-icon>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="outline" class="full-width-field">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-icon color="primary" matSuffix>apps</mat-icon>
+        </mat-form-field>
+        <br/>
+        <button mat-raised-button color="primary" type="submit"  [disabled]="!loginForm.valid">Login</button>
+      </form>
+    </mat-card>
+</div>

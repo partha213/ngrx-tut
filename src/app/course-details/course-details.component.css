@@ -1,0 +1,58 @@
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3d82b8;
+  color: white;
+}
+
+
+.mat-toolbar {
+  min-height: 40px !important;
+  height: 40px !important;
+  border-radius: 5px;
+}
+
+.mat-toolbar-row {
+  min-height: 40px !important;
+  height: 40px !important;
+}
+
+.mat-form-field {
+  width: 365px !important;;
+}
+
+.course-card {
+  width:200px;
+  margin-top:2em;
+  margin-left:2em;
+  /* flex: 1 1 auto;
+ /* display:table-cell; */
+
+}
+
+.course-div {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mat-card-image {
+  height: 150px;
+}
+

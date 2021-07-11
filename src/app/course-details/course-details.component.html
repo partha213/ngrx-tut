@@ -1,0 +1,45 @@
+
+
+<div *ngIf="false">
+    <table id="customers">
+      <tr><th>Course Name</th><th>Course URL</th><th>Delete Course</th></tr>
+      <tr *ngFor="let tut of tutorials | async; let i = index"><td><a href="{{tut.url}}">{{tut.name}}</a></td><td>{{tut.url}}</td><td><button mat-icon-button color="primary" (click)="delTutorial(i)"> <mat-icon>delete</mat-icon></button></td></tr>
+    </table>
+</div>
+
+<div class="course-div">
+  <mat-card *ngFor="let tut of tutorials | async; let i = index" class="course-card">
+    <mat-card-header>
+      <mat-card-title color="primary">{{tut.name}}</mat-card-title>
+    </mat-card-header>
+      <img mat-card-image src='{{tut.url}}'>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="delTutorial(i)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div>
+  <mat-card>
+  <form [formGroup]="addCourse" (ngSubmit)="addTutorial(this.addCourse.value.name, this.addCourse.value.url)">
+    <mat-toolbar color="primary">Add Course</mat-toolbar>
+    <br/>
+    <mat-form-field appearance="outline">
+      <mat-label>Course Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-icon  color="primary" matSuffix>book</mat-icon>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field appearance="outline">
+      <mat-label>URL</mat-label>
+      <input matInput formControlName="url">
+      <mat-icon color="primary" matSuffix>link</mat-icon>
+    </mat-form-field>
+    <br/>
+
+    <button mat-raised-button color="primary" type="submit"  [disabled]="!addCourse.valid">Add Course</button>
+  </form>
+</mat-card>
+</div>
+
